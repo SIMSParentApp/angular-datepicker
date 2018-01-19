@@ -17,6 +17,7 @@
         mondayStart: false,
         textToday: "Today",
         closeOnToday: false,
+        today: new Date(),
 
         initState: "month",
         maxState: "decade",
@@ -215,7 +216,7 @@
                     }
                 };
                 scope.now = function () {
-                    scope.model = new Date();
+                    scope.model = conf.today || new Date();
                     scope.initialDate = scope.model;
                     refresh();
                     if(scope.closeOnToday) { togglePicker(false) }
